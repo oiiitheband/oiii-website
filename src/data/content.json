@@ -1,0 +1,448 @@
+{
+  "bandName": "Oiii",
+  "tagline": "PUNK ROCK FOR MILLENIALS WITH BACK ISSUES",
+  "news": [
+    {
+      "id": 1,
+      "date": "OCT 31",
+      "title": "NEW EP 'TRASH FIRE' OUT NOW",
+      "content": "Stream it everywhere before we get sued. It's 15 minutes of pure chaos.",
+      "color": "acid-green"
+    },
+    {
+      "id": 2,
+      "date": "SEP 15",
+      "title": "BASSIST WANTED (AGAIN)",
+      "content": "Must own own rig. No egos. Must tolerate smell of stale beer.",
+      "color": "hot-pink"
+    }
+  ],
+  "bio": "Punk rock straight out of Kathmandu.",
+  "tour": [
+    {
+      "id": 1,
+      "date": "NOV 12",
+      "venue": "THE RAT HOLE",
+      "city": "CHICAGO, IL",
+      "ticketLink": "#"
+    },
+    {
+      "id": 2,
+      "date": "NOV 14",
+      "venue": "BASEMENT SHOW",
+      "city": "DETROIT, MI",
+      "ticketLink": "#"
+    },
+    {
+      "id": 3,
+      "date": "NOV 18",
+      "venue": "PUNK ROCK BOWL",
+      "city": "LAS VEGAS, NV",
+      "ticketLink": "#"
+    }
+  ],
+  "music": [
+    {
+      "id": 1,
+      "title": "KHOJDAI",
+      "year": "2025",
+      "label": "LATEST RELEASE",
+      "image": "https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      "link": "#"
+    },
+    {
+      "id": 2,
+      "title": "GUFFAI TA HO",
+      "year": "2025",
+      "image": "/src/assets/prayas.jpg",
+      "link": "#"
+    },
+    {
+      "id": 3,
+      "title": "SAMHALIDEU",
+      "year": "2025",
+      "image": "/src/assets/prayas.jpg",
+      "link": "#"
+    },
+    {
+      "id": 4,
+      "title": "KINA",
+      "year": "2025",
+      "image": "/src/assets/prayas.jpg",
+      "link": "#"
+    },
+    {
+      "id": 5,
+      "title": "KHOKRO RASTRIYATA",
+      "year": "2025",
+      "image": "/src/assets/prayas.jpg",
+      "link": "#"
+    },
+    {
+      "id": 6,
+      "title": "PRAYAS",
+      "year": "2024",
+      "image": "/src/assets/prayas.jpg",
+      "link": "#"
+    }
+  ],
+  "quiz": {
+    "title": "WHICH OIII SONG ARE YOU?",
+    "questions": [
+      {
+        "id": 1,
+        "text": "Alarm bajyo. You…",
+        "options": [
+          {
+            "text": "“La la, let’s go.” (mentally buffering)",
+            "pointsTo": "PRAYAS",
+            "color": "burnt-orange"
+          },
+          {
+            "text": "Stare at the ceiling like it betrayed you.",
+            "pointsTo": "KINA",
+            "color": "neon-purple"
+          },
+          {
+            "text": "Another day, same old me.",
+            "pointsTo": "KHOJDAI",
+            "color": "cyber-yellow"
+          },
+          {
+            "text": "Check if they texted. Casually. Very casually.",
+            "pointsTo": "SAMHALIDEU",
+            "color": "deep-crimson"
+          },
+          {
+            "text": "Why do mornings exist? Who approved this?",
+            "pointsTo": "KHOKRO RASTRIYATA",
+            "color": "warning-red"
+          },
+          {
+            "text": "Snooze. Confidence intact.",
+            "pointsTo": "GUFFAI TA HO",
+            "color": "toxic-lime"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "text": "Someone leaves you on seen.",
+        "options": [
+          {
+            "text": "Act normal. Emotion archived.",
+            "pointsTo": "PRAYAS",
+            "color": "burnt-orange"
+          },
+          {
+            "text": "Overanalyze punctuation and timing.",
+            "pointsTo": "KINA",
+            "color": "neon-purple"
+          },
+          {
+            "text": "Maybe this is character development. :(",
+            "pointsTo": "KHOJDAI",
+            "color": "cyber-yellow"
+          },
+          {
+            "text": "Suddenly feel the urge to do something productive.",
+            "pointsTo": "SAMHALIDEU",
+            "color": "deep-crimson"
+          },
+          {
+            "text": "If they wanted to, they would.",
+            "pointsTo": "KHOKRO RASTRIYATA",
+            "color": "warning-red"
+          },
+          {
+            "text": "Double text. No fear.",
+            "pointsTo": "GUFFAI TA HO",
+            "color": "toxic-lime"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "text": "Chiya pasal energy:",
+        "options": [
+          {
+            "text": "Hype everyone up. Make plans.",
+            "pointsTo": "PRAYAS",
+            "color": "burnt-orange"
+          },
+          {
+            "text": "Listening… but mentally elsewhere.",
+            "pointsTo": "KINA",
+            "color": "neon-purple"
+          },
+          {
+            "text": "“Yo sab 5 barsa pachi kata huncha?”",
+            "pointsTo": "KHOJDAI",
+            "color": "cyber-yellow"
+          },
+          {
+            "text": "Notice who went quiet immediately.",
+            "pointsTo": "SAMHALIDEU",
+            "color": "deep-crimson"
+          },
+          {
+            "text": "Say something slightly controversial.",
+            "pointsTo": "KHOKRO RASTRIYATA",
+            "color": "warning-red"
+          },
+          {
+            "text": "Escalate the joke beyond recovery.",
+            "pointsTo": "GUFFAI TA HO",
+            "color": "toxic-lime"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "text": "Late night scrolling looks like:",
+        "options": [
+          {
+            "text": "Posting memes while fighting demons.",
+            "pointsTo": "PRAYAS",
+            "color": "burnt-orange"
+          },
+          {
+            "text": "Reading old chats for no reason.",
+            "pointsTo": "KINA",
+            "color": "neon-purple"
+          },
+          {
+            "text": "I'd rather be somewhere else right now.",
+            "pointsTo": "KHOJDAI",
+            "color": "cyber-yellow"
+          },
+          {
+            "text": "Checking if they’re active. Not stalking.",
+            "pointsTo": "SAMHALIDEU",
+            "color": "deep-crimson"
+          },
+          {
+            "text": "Getting annoyed at fake-deep captions.",
+            "pointsTo": "KHOKRO RASTRIYATA",
+            "color": "warning-red"
+          },
+          {
+            "text": "Random reels. Pure vibes.",
+            "pointsTo": "GUFFAI TA HO",
+            "color": "toxic-lime"
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "text": "Friend says, “Bro chill.”",
+        "options": [
+          {
+            "text": "“I am chill.” (You are not chill.)",
+            "pointsTo": "PRAYAS",
+            "color": "burnt-orange"
+          },
+          {
+            "text": "“Wait… am I not chill?”",
+            "pointsTo": "KINA",
+            "color": "neon-purple"
+          },
+          {
+            "text": "“What if I was never meant to be chill?”",
+            "pointsTo": "KHOJDAI",
+            "color": "cyber-yellow"
+          },
+          {
+            "text": "“No but listen…” (proceeds to not chill)",
+            "pointsTo": "SAMHALIDEU",
+            "color": "deep-crimson"
+          },
+          {
+            "text": "“Chill is overrated.”",
+            "pointsTo": "KHOKRO RASTRIYATA",
+            "color": "warning-red"
+          },
+          {
+            "text": "“Bro I invented chill.”",
+            "pointsTo": "GUFFAI TA HO",
+            "color": "toxic-lime"
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "text": "Someone underestimates you.",
+        "options": [
+          {
+            "text": "Smile. Villain arc bookmarked.",
+            "pointsTo": "PRAYAS",
+            "color": "burnt-orange"
+          },
+          {
+            "text": "Think about it for 3–5 business days.",
+            "pointsTo": "KINA",
+            "color": "neon-purple"
+          },
+          {
+            "text": "Maybe I’m meant for something bigger anyway.",
+            "pointsTo": "KHOJDAI",
+            "color": "cyber-yellow"
+          },
+          {
+            "text": "Laugh it off. Feel it later.",
+            "pointsTo": "SAMHALIDEU",
+            "color": "deep-crimson"
+          },
+          {
+            "text": "Instant respect downgrade.",
+            "pointsTo": "KHOKRO RASTRIYATA",
+            "color": "warning-red"
+          },
+          {
+            "text": "“Wait till season 2.”",
+            "pointsTo": "GUFFAI TA HO",
+            "color": "toxic-lime"
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "text": "Thinking about your past self.",
+        "options": [
+          {
+            "text": "We survived. Cinematic.",
+            "pointsTo": "PRAYAS",
+            "color": "burnt-orange"
+          },
+          {
+            "text": "Why was I like that?",
+            "pointsTo": "KINA",
+            "color": "neon-purple"
+          },
+          {
+            "text": "That version walked so I could run.",
+            "pointsTo": "KHOJDAI",
+            "color": "cyber-yellow"
+          },
+          {
+            "text": "I was attached for absolutely no reason.",
+            "pointsTo": "SAMHALIDEU",
+            "color": "deep-crimson"
+          },
+          {
+            "text": "I used to believe everything. Wild.",
+            "pointsTo": "KHOKRO RASTRIYATA",
+            "color": "warning-red"
+          },
+          {
+            "text": "Peak chaos era. No notes.",
+            "pointsTo": "GUFFAI TA HO",
+            "color": "toxic-lime"
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "text": "Pick your final form:",
+        "options": [
+          {
+            "text": "Loud outside. Intense inside.",
+            "pointsTo": "PRAYAS",
+            "color": "burnt-orange"
+          },
+          {
+            "text": "Professional overthinker.",
+            "pointsTo": "KINA",
+            "color": "neon-purple"
+          },
+          {
+            "text": "CEO of ‘what if.’",
+            "pointsTo": "KHOJDAI",
+            "color": "cyber-yellow"
+          },
+          {
+            "text": "Emotionally invested. Unfortunately.",
+            "pointsTo": "SAMHALIDEU",
+            "color": "deep-crimson"
+          },
+          {
+            "text": "Allergic to nonsense.",
+            "pointsTo": "KHOKRO RASTRIYATA",
+            "color": "warning-red"
+          },
+          {
+            "text": "Just here for vibes.",
+            "pointsTo": "GUFFAI TA HO",
+            "color": "toxic-lime"
+          }
+        ]
+      }
+    ],
+    "results": [
+      {
+        "song": "PRAYAS",
+        "description": "You’re the ‘I got this’ friend running on 3 hours of sleep and pure spite. This song is your theme music for pushing through anyway.",
+        "color": "burnt-orange"
+      },
+      {
+        "song": "KINA",
+        "description": "You overthink texts, tones, and the meaning of existence. This track spirals with you — but make it catchy.",
+        "color": "neon-purple"
+      },
+      {
+        "song": "KHOJDAI",
+        "description": "You’re mid-glow-up and mid-identity-crisis at the same time. Press play if you’re reinventing yourself again.",
+        "color": "cyber-yellow"
+      },
+      {
+        "song": "KHOKRO RASTRIYATA",
+        "description": "You can’t stand fake energy. This one’s loud, honest, and slightly confrontational — just like your standards.",
+        "color": "warning-red"
+      },
+      {
+        "song": "GUFFAI TA HO",
+        "description": "You avoid drama and choose vibes. This song is for screaming the chorus with zero overthinking.",
+        "color": "toxic-lime"
+      },
+      {
+        "song": "SAMHALIDEU",
+        "description": "You fall hard but act chill. This track feels like sending a risky text and pretending you don’t care.",
+        "color": "deep-crimson"
+      }
+    ]
+  },
+  "setlistPool": [
+    "SAMHALIDEU",
+    "PRAYAS",
+    "KINA",
+    "KHOJDAI",
+    "KHOKRO RASTRIYATA",
+    "GUFFAI TA HO"
+  ],
+  "videos": [
+    {
+      "title": "KHOJDAI (Lyric Video)",
+      "youtubeLink": "https://www.youtube.com/watch?v=ztmwi4FMtKY"
+    },
+    {
+      "title": "GUFFAI TA HO (AI VIDEO)",
+      "youtubeLink": "https://www.youtube.com/watch?v=qpi6QLMiU8s"
+    },
+    {
+      "title": "KINA (ANIMATED LYRIC VIDEO)",
+      "youtubeLink": "https://www.youtube.com/watch?v=5iepDovdoCg"
+    },
+    {
+      "title": "PRAYAS (OFFICIAL MUSIC VIDEO)",
+      "youtubeLink": "https://www.youtube.com/watch?v=oloCv56h_eM"
+    },
+    {
+      "title": "OIII X PARADYGM TV",
+      "youtubeLink": "https://www.youtube.com/watch?v=eQwDNX8A-Xs"
+    },
+    {
+      "title": "OIII X YELLOWORKS",
+      "youtubeLink": "https://www.youtube.com/watch?v=-dk81VAEs6U"
+    }
+  ]
+}
