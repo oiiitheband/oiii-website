@@ -127,7 +127,7 @@ const MusicMerch = () => {
                         DISCOGRAPHY
                     </h2>
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem' }}>
-                        {content.music.map((release, index) => (
+                        {content.music.map((release) => (
                             <ReleaseItem key={release.id} release={release} />
                         ))}
                     </div>
