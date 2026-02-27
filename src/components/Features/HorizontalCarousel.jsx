@@ -41,7 +41,7 @@ const HorizontalCarousel = () => {
                         alignItems: 'center'
                     }}>
                         <img
-                            src={`/src/assets/carousel/Slice ${img}.jpg`}
+                            src={`${import.meta.env.BASE_URL}assets/carousel/Slice ${img}.jpg`}
                             alt={`Carousel Slice ${img}`}
                             onError={(e) => {
                                 // Ignore missing images locally and just show gray background

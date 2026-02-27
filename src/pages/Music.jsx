@@ -28,7 +28,7 @@ const ReleaseItem = ({ release }) => {
                 flexShrink: 0
             }}>
                 {release.image ? (
-                    <img src={release.image} alt={release.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    <img src={release.image.startsWith('/') ? `${import.meta.env.BASE_URL}${release.image.slice(1)}` : release.image} alt={release.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 ) : (
                     <div style={{ width: '100%', height: '100%', background: `var(--color-${release.coverColor || 'dark'})` }} />
                 )}
