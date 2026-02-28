@@ -69,6 +69,117 @@ const Quiz = () => {
         }, 300);
     };
 
+    const shareResult = async () => {
+        if (!resultData) return;
+
+        const canvas = document.createElement('canvas');
+        canvas.width = 1080;
+        canvas.height = 1920; // Instagram Story aspect ratio
+        const ctx = canvas.getContext('2d');
+
+        // 1. Background
+        ctx.fillStyle = '#111';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        // Noise Overlay (Optional but matching site aesthetic)
+        ctx.fillStyle = 'rgba(255,255,255,0.05)';
+        for (let i = 0; i < 5000; i++) {
+            const x = Math.random() * canvas.width;
+            const y = Math.random() * canvas.height;
+            ctx.fillRect(x, y, 2, 2);
+        }
+
+        // 2. Title "Which Oiii song are you?"
+        ctx.fillStyle = '#fff';
+        ctx.font = 'bold 60px sans-serif'; // Fallback for custom fonts in canvas
+        ctx.textAlign = 'center';
+        ctx.fillText('WHICH OIII SONG ARE YOU?', canvas.width / 2, 300);
+
+        // 3. Result Section (Sticker Background)
+        const stickerY = 600;
+        const stickerWidth = 900;
+        const stickerHeight = 400;
+        ctx.save();
+        ctx.translate(canvas.width / 2, stickerY + stickerHeight / 2);
+        ctx.rotate(-0.05); // Slight rotation
+        ctx.fillStyle = resultData.color ? `var(--color-${resultData.color})` : '#fff';
+        // If var doesn't work in canvas, map them
+        const colorMap = { 'acid-green': '#ccff00', 'hot-pink': '#ff00ff', 'electric-blue': '#00ffff' };
+        ctx.fillStyle = colorMap[resultData.color] || '#fff';
+        ctx.shadowColor = 'rgba(0,0,0,0.8)';
+        ctx.shadowBlur = 0;
+        ctx.shadowOffsetX = 15;
+        ctx.shadowOffsetY = 15;
+        ctx.fillRect(-stickerWidth / 2, -stickerHeight / 2, stickerWidth, stickerHeight);
+        ctx.strokeStyle = '#000';
+        ctx.lineWidth = 10;
+        ctx.strokeRect(-stickerWidth / 2, -stickerHeight / 2, stickerWidth, stickerHeight);
+
+        // Result Song Text
+        ctx.fillStyle = '#000';
+        ctx.font = 'bold 120px sans-serif';
+        ctx.fillText(resultData.song.toUpperCase(), 0, 40);
+        ctx.restore();
+
+        // 4. Description Box
+        ctx.fillStyle = 'rgba(255,255,255,0.1)';
+        ctx.strokeStyle = '#fff';
+        ctx.lineWidth = 2;
+        const descY = 1100;
+        const descRectWidth = 850;
+        const descRectHeight = 300;
+        ctx.fillRect((canvas.width - descRectWidth) / 2, descY, descRectWidth, descRectHeight);
+        ctx.strokeRect((canvas.width - descRectWidth) / 2, descY, descRectWidth, descRectHeight);
+
+        ctx.fillStyle = '#fff';
+        ctx.font = '40px sans-serif';
+        const words = resultData.description.split(' ');
+        let line = '';
+        let y = descY + 80;
+        for (let n = 0; n < words.length; n++) {
+            const testLine = line + words[n] + ' ';
+            const metrics = ctx.measureText(testLine);
+            if (metrics.width > 750 && n > 0) {
+                ctx.fillText(line, canvas.width / 2, y);
+                line = words[n] + ' ';
+                y += 60;
+            } else {
+                line = testLine;
+            }
+        }
+        ctx.fillText(line, canvas.width / 2, y);
+
+        // 5. Band Logo / Branding
+        ctx.fillStyle = '#fff';
+        ctx.font = 'bold 40px sans-serif';
+        ctx.fillText('OIII THE BAND', canvas.width / 2, 1700);
+        ctx.font = '30px sans-serif';
+        ctx.fillText('STK AND DESTROY', canvas.width / 2, 1750);
+
+        // Convert to blob and share
+        canvas.toBlob(async (blob) => {
+            const file = new File([blob], 'oiii-quiz-result.png', { type: 'image/png' });
+
+            if (navigator.share && navigator.canShare && navigator.canShare({ files: [file] })) {
+                try {
+                    await navigator.share({
+                        files: [file],
+                        title: 'My Oiii Quiz Result',
+                        text: `I got ${resultData.song}! Which Oiii song are you?`
+                    });
+                } catch (err) {
+                    console.error('Sharing failed', err);
+                }
+            } else {
+                // Fallback: Download
+                const link = document.createElement('a');
+                link.download = 'oiii-result.png';
+                link.href = canvas.toDataURL();
+                link.click();
+            }
+        }, 'image/png');
+    };
+
     // Splash screen variants
     const splashVariants = {
         hidden: { opacity: 0, scale: 0.95 },
@@ -464,6 +575,7 @@ const Quiz = () => {
                                                     </p>
                                                 </div>
                                                 <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+                                                    <StickerButton onClick={shareResult} color="var(--color-electric-blue)" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.5rem)' }}>SHARE RESULT</StickerButton>
                                                     <StickerButton onClick={resetQuiz} color="var(--color-light)" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.5rem)' }}>RETAKE</StickerButton>
                                                     <StickerButton onClick={closeQuiz} color="var(--color-hot-pink)" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.5rem)' }}>CLOSE</StickerButton>
                                                 </div>
