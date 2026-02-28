@@ -154,22 +154,45 @@ const Merch = () => {
             <div className="container" style={{ paddingBottom: '4rem' }}>
 
                 {/* Header */}
-                <motion.h1
-                    className="zine-text"
-                    initial={{ y: -50, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    style={{
-                        fontSize: 'clamp(2.5rem, 8vw, 5rem)',
-                        lineHeight: '1.2',
-                        paddingTop: '1rem',
-                        textAlign: 'center',
-                        color: 'var(--color-light)',
-                        marginBottom: '2rem',
-                        textShadow: '4px 4px 0 var(--color-hot-pink)'
-                    }}
-                >
-                    MERCH
-                </motion.h1>
+                <div style={{ position: 'relative', display: 'inline-block', width: '100%' }}>
+                    <motion.h1
+                        className="zine-text"
+                        initial={{ y: -50, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        style={{
+                            fontSize: 'clamp(2.5rem, 8vw, 5rem)',
+                            lineHeight: '1.2',
+                            paddingTop: '1rem',
+                            textAlign: 'center',
+                            color: 'var(--color-light)',
+                            marginBottom: '2rem',
+                            textShadow: '4px 4px 0 var(--color-hot-pink)'
+                        }}
+                    >
+                        MERCH
+                    </motion.h1>
+                    <motion.div
+                        initial={{ scale: 0, rotate: -20 }}
+                        animate={{ scale: 1, rotate: -15 }}
+                        transition={{ delay: 0.5, type: 'spring' }}
+                        style={{
+                            position: 'absolute',
+                            top: '10%',
+                            right: '20%',
+                            background: 'var(--color-acid-green)',
+                            color: '#000',
+                            padding: '0.5rem 1.5rem',
+                            fontSize: 'clamp(1rem, 3vw, 1.8rem)',
+                            fontWeight: 'bold',
+                            fontFamily: 'var(--font-primary)',
+                            border: '3px solid #000',
+                            boxShadow: '6px 6px 0 rgba(0,0,0,1)',
+                            zIndex: 5
+                        }}
+                    >
+                        COMING SOON
+                    </motion.div>
+                </div>
 
                 {/* Categories */}
                 <div style={{

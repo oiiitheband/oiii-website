@@ -77,7 +77,23 @@ const TopNav = () => {
                 {/* Desktop: Left links */}
                 <div className="desktop-nav-links" style={{ display: 'flex', gap: '2rem', flex: 1, justifyContent: 'flex-end', paddingRight: '2rem', transition: 'all 0.3s ease' }}>
                     <span style={linkStyle} onMouseEnter={(e) => e.target.style.color = 'var(--color-acid-green)'} onMouseLeave={(e) => e.target.style.color = 'var(--color-light)'} onClick={() => scrollToSection('home')}>HOME</span>
-                    <span style={linkStyle} onMouseEnter={(e) => e.target.style.color = 'var(--color-acid-green)'} onMouseLeave={(e) => e.target.style.color = 'var(--color-light)'} onClick={() => navigate('/merch')}>MERCH</span>
+                    <div style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
+                        <span style={linkStyle} onMouseEnter={(e) => e.target.style.color = 'var(--color-acid-green)'} onMouseLeave={(e) => e.target.style.color = 'var(--color-light)'} onClick={() => navigate('/merch')}>MERCH</span>
+                        <span style={{
+                            position: 'absolute',
+                            top: '-12px',
+                            right: '-25px',
+                            background: 'var(--color-hot-pink)',
+                            color: 'var(--color-light)',
+                            fontSize: '0.6rem',
+                            padding: '2px 4px',
+                            fontWeight: 'bold',
+                            transform: 'rotate(15deg)',
+                            border: '1px solid #000',
+                            pointerEvents: 'none',
+                            zIndex: 10
+                        }}>SOON</span>
+                    </div>
                 </div>
 
                 {/* Logo — center on desktop, left-ish on mobile */}
@@ -158,22 +174,39 @@ const TopNav = () => {
                         { label: 'MUSIC', action: () => scrollToSection('music') },
                         { label: 'MERCH', action: () => { setMenuOpen(false); navigate('/merch'); } },
                     ].map(({ label, action }) => (
-                        <span
-                            key={label}
-                            onClick={action}
-                            style={{
-                                fontFamily: 'var(--font-primary)',
-                                fontSize: '2.5rem',
-                                color: 'var(--color-light)',
-                                cursor: 'pointer',
-                                letterSpacing: '3px',
-                                transition: 'color 0.2s'
-                            }}
-                            onMouseEnter={(e) => e.target.style.color = 'var(--color-acid-green)'}
-                            onMouseLeave={(e) => e.target.style.color = 'var(--color-light)'}
-                        >
-                            {label}
-                        </span>
+                        <div key={label} style={{ position: 'relative' }}>
+                            <span
+                                onClick={action}
+                                style={{
+                                    fontFamily: 'var(--font-primary)',
+                                    fontSize: '2.5rem',
+                                    color: 'var(--color-light)',
+                                    cursor: 'pointer',
+                                    letterSpacing: '3px',
+                                    transition: 'color 0.2s'
+                                }}
+                                onMouseEnter={(e) => e.target.style.color = 'var(--color-acid-green)'}
+                                onMouseLeave={(e) => e.target.style.color = 'var(--color-light)'}
+                            >
+                                {label}
+                            </span>
+                            {label === 'MERCH' && (
+                                <span style={{
+                                    position: 'absolute',
+                                    top: '-10px',
+                                    right: '-40px',
+                                    background: 'var(--color-hot-pink)',
+                                    color: 'var(--color-light)',
+                                    fontSize: '1rem',
+                                    padding: '4px 8px',
+                                    fontWeight: 'bold',
+                                    transform: 'rotate(12deg)',
+                                    border: '2px solid #000',
+                                    fontFamily: 'var(--font-secondary)',
+                                    pointerEvents: 'none'
+                                }}>SOON</span>
+                            )}
+                        </div>
                     ))}
                 </div>
             )}
