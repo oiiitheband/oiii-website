@@ -10,8 +10,8 @@ const HorizontalCarousel = () => {
             height: '100vh',
             background: 'var(--color-dark)',
             overflow: 'hidden',
-            paddingTop: '8rem',
-            paddingBottom: '4rem',
+            paddingTop: 'clamp(5rem, 8vw, 8rem)',
+            paddingBottom: 'clamp(2rem, 4vw, 4rem)',
             boxSizing: 'border-box'
         }}>
             {/* Horizontal scrolling container */}

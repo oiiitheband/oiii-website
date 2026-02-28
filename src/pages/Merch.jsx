@@ -159,7 +159,7 @@ const Merch = () => {
                     initial={{ y: -50, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     style={{
-                        fontSize: '5rem',
+                        fontSize: 'clamp(2.5rem, 8vw, 5rem)',
                         lineHeight: '1.2',
                         paddingTop: '1rem',
                         textAlign: 'center',
@@ -185,7 +185,7 @@ const Merch = () => {
                             onClick={() => setActiveCategory(category)}
                             color={activeCategory === category ? 'var(--color-acid-green)' : 'var(--color-light)'}
                             style={{
-                                fontSize: '1.2rem',
+                                fontSize: 'clamp(0.9rem, 2vw, 1.2rem)',
                                 transform: `rotate(${categoryRotations[idx]}deg)`
                             }}
                         >

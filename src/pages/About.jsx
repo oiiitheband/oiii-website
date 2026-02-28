@@ -16,7 +16,7 @@ const About = () => {
             backgroundImage: `url(${prayasImg})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            padding: '4rem 10vw'
+            padding: 'clamp(2rem, 8vw, 4rem) clamp(1rem, 8vw, 10vw)'
         }}>
             {/* Translucent overlay */}
             <div style={{
@@ -53,7 +53,7 @@ const About = () => {
             <div style={{ position: 'relative', zIndex: 1, width: '100%', display: 'flex', justifyContent: 'center' }}>
                 <TornPanel rotation="2deg" color="var(--color-electric-blue)" style={{ maxWidth: '800px' }}>
                     <h2 className="zine-text text-dark" style={{
-                        fontSize: '4rem',
+                        fontSize: 'clamp(2rem, 7vw, 4rem)',
                         marginBottom: '2rem',
                         textShadow: '2px 2px 0 var(--color-light)'
                     }}>

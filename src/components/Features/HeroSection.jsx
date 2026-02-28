@@ -79,7 +79,7 @@ const HeroSection = () => {
                 >
                     <span style={{
                         fontFamily: 'var(--font-secondary), sans-serif',
-                        fontSize: '1.2rem',
+                        fontSize: 'clamp(0.8rem, 2vw, 1.2rem)',
                         letterSpacing: '4px',
                         color: 'var(--color-acid-green)',
                         fontWeight: 'bold',
@@ -88,7 +88,7 @@ const HeroSection = () => {
                         Latest Release
                     </span>
                     <h2 className="zine-text" style={{
-                        fontSize: '6rem',
+                        fontSize: 'clamp(2.5rem, 10vw, 6rem)',
                         color: 'var(--color-light)',
                         margin: '0.5rem 0 2rem 0',
                         textShadow: '0 4px 10px rgba(0,0,0,0.8)'

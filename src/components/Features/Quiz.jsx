@@ -87,18 +87,18 @@ const Quiz = () => {
                     onClick={() => setIsOpen(true)}
                     style={{
                         position: 'fixed',
-                        bottom: '2rem',
-                        right: '2rem',
+                        bottom: 'clamp(1rem, 4vw, 2rem)',
+                        right: 'clamp(1rem, 4vw, 2rem)',
                         zIndex: 900,
                         background: 'var(--color-hot-pink)',
-                        padding: '1rem 2rem',
+                        padding: 'clamp(0.5rem, 2vw, 1rem) clamp(1rem, 4vw, 2rem)',
                         border: '4px solid var(--color-light)',
                         cursor: 'pointer',
                         boxShadow: '6px 6px 0 rgba(0,0,0,1)',
                         transform: 'rotate(2deg)'
                     }}
                 >
-                    <span className="zine-text" style={{ fontSize: '1.5rem', color: 'var(--color-light)' }}>
+                    <span className="zine-text" style={{ fontSize: 'clamp(1rem, 3vw, 1.5rem)', color: 'var(--color-light)' }}>
                         WHICH SONG ARE YOU? &rarr;
                     </span>
                 </motion.div>
@@ -131,14 +131,14 @@ const Quiz = () => {
                             onClick={closeQuiz}
                             style={{
                                 position: 'absolute',
-                                top: '2rem',
-                                right: '2rem',
+                                top: 'clamp(1rem, 4vw, 2rem)',
+                                right: 'clamp(1rem, 4vw, 2rem)',
                                 background: hasStarted ? '#000' : 'var(--color-dark)',
                                 border: hasStarted ? '3px solid #000' : '3px solid var(--color-light)',
                                 color: hasStarted ? '#fff' : 'var(--color-light)',
-                                fontSize: '2rem',
-                                width: '50px',
-                                height: '50px',
+                                fontSize: 'clamp(1.5rem, 4vw, 2rem)',
+                                width: 'clamp(40px, 8vw, 50px)',
+                                height: 'clamp(40px, 8vw, 50px)',
                                 display: 'flex',
                                 alignItems: 'center',
                                 justifyContent: 'center',
@@ -147,8 +147,8 @@ const Quiz = () => {
                                 fontFamily: 'sans-serif',
                                 lineHeight: '0',
                                 paddingBottom: '4px',
-                                zIndex: 999999, // Ensure it's above the nav bar
-                                boxShadow: hasStarted ? '4px 4px 0 rgba(255,255,255,1)' : '4px 4px 0 rgba(0,0,0,1)',
+                                zIndex: 999999,
+                                boxShadow: '4px 4px 0 rgba(0,0,0,1)',
                                 transform: 'rotate(5deg)'
                             }}
                         >
@@ -164,6 +164,7 @@ const Quiz = () => {
                                     initial="hidden"
                                     animate="visible"
                                     exit="exit"
+                                    className="quiz-splash-row"
                                     style={{
                                         display: 'flex',
                                         flexDirection: 'row',
@@ -173,14 +174,16 @@ const Quiz = () => {
                                     }}
                                 >
                                     {/* Left Side: Uncle Sam style image */}
-                                    <div style={{
-                                        flex: 1,
-                                        position: 'relative',
-                                        overflow: 'hidden',
-                                        display: 'flex',
-                                        alignItems: 'flex-end',
-                                        justifyContent: 'center'
-                                    }}>
+                                    <div
+                                        className="quiz-splash-img-side"
+                                        style={{
+                                            flex: 1,
+                                            position: 'relative',
+                                            overflow: 'hidden',
+                                            display: 'flex',
+                                            alignItems: 'flex-end',
+                                            justifyContent: 'center'
+                                        }}>
                                         {/* Using the provided Uncle Sam pointing image */}
                                         <img
                                             src={uncleSamImage}
@@ -204,18 +207,20 @@ const Quiz = () => {
                                     </div>
 
                                     {/* Right Side: Text & Button */}
-                                    <div style={{
-                                        flex: 1,
-                                        display: 'flex',
-                                        flexDirection: 'column',
-                                        justifyContent: 'center',
-                                        alignItems: 'flex-start',
-                                        padding: '4rem',
-                                        position: 'relative',
-                                        zIndex: 10
-                                    }}>
+                                    <div
+                                        className="quiz-splash-text-side"
+                                        style={{
+                                            flex: 1,
+                                            display: 'flex',
+                                            flexDirection: 'column',
+                                            justifyContent: 'center',
+                                            alignItems: 'flex-start',
+                                            padding: '4rem',
+                                            position: 'relative',
+                                            zIndex: 10
+                                        }}>
                                         <h1 className="zine-text" style={{
-                                            fontSize: '6rem',
+                                            fontSize: 'clamp(2.5rem, 10vw, 6rem)',
                                             lineHeight: '0.9',
                                             color: 'var(--color-light)',
                                             textShadow: '4px 4px 0px #000',
@@ -228,7 +233,7 @@ const Quiz = () => {
                                         </h1>
 
                                         <div
-                                            className="torn-edge"
+                                            className="torn-edge splash-take-quiz-btn"
                                             onClick={startQuiz}
                                             style={{
                                                 background: 'var(--color-red)',
@@ -253,21 +258,35 @@ const Quiz = () => {
                                     {/* Mobile rough responsive overlay */}
                                     <style>{`
                                         @media(max-width: 768px) {
-                                            div[style*="flexDirection: 'row'"] {
+                                            .quiz-splash-row {
                                                 flex-direction: column !important;
                                             }
-                                            div[style*="alignItems: 'flex-start'"] {
+                                            .quiz-splash-text-side {
                                                 align-items: center !important;
                                                 padding: 2rem !important;
                                                 text-align: center;
+                                                justify-content: flex-start !important;
+                                                padding-top: 5rem !important;
                                             }
-                                            h1 {
-                                                fontSize: 4rem !important;
+                                            .splash-take-quiz-btn {
+                                                font-size: 1.8rem !important;
+                                                padding: 1rem 2rem !important;
                                             }
                                             img[alt="Uncle Sam Pointing"] {
-                                                opacity: 0.5;
+                                                opacity: 0.3;
                                                 height: 100% !important;
                                                 width: 100%;
+                                                position: absolute;
+                                                top: 0;
+                                                left: 0;
+                                            }
+                                            .quiz-splash-img-side {
+                                                position: absolute !important;
+                                                top: 0;
+                                                left: 0;
+                                                width: 100%;
+                                                height: 100%;
+                                                z-index: 0;
                                             }
                                         }
                                     `}</style>
@@ -378,8 +397,8 @@ const Quiz = () => {
                                                 {/* Answers Grid */}
                                                 <div style={{
                                                     display: 'grid',
-                                                    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-                                                    gap: '1.5rem'
+                                                    gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+                                                    gap: 'clamp(0.75rem, 2vw, 1.5rem)'
                                                 }}>
                                                     {content.quiz.questions[currentQuestion].options.map((option, idx) => (
                                                         <div
@@ -435,18 +454,18 @@ const Quiz = () => {
                                                 animate={{ scale: 1, opacity: 1 }}
                                                 style={{ textAlign: 'center', zIndex: 10 }}
                                             >
-                                                <h2 className="zine-text" style={{ fontSize: '2rem', color: 'var(--color-light)' }}>YOU ARE:</h2>
-                                                <h1 className="zine-text" style={{ fontSize: '5rem', color: `var(--color-${resultData.color})`, margin: '1rem 0', textShadow: '4px 4px 0 rgba(0,0,0,1)' }}>
+                                                <h2 className="zine-text" style={{ fontSize: 'clamp(1.2rem, 3vw, 2rem)', color: 'var(--color-light)' }}>YOU ARE:</h2>
+                                                <h1 className="zine-text" style={{ fontSize: 'clamp(2.5rem, 8vw, 5rem)', color: `var(--color-${resultData.color})`, margin: '1rem 0', textShadow: '4px 4px 0 rgba(0,0,0,1)' }}>
                                                     {resultData.song}
                                                 </h1>
-                                                <div style={{ maxWidth: '600px', margin: '0 auto 2rem auto', background: 'var(--color-dark)', border: '4px solid var(--color-light)', padding: '2rem', boxShadow: '10px 10px 0 rgba(0,0,0,1)' }}>
-                                                    <p style={{ fontFamily: 'var(--font-secondary), sans-serif', fontSize: '1.5rem', color: 'var(--color-light)', opacity: 0.9 }}>
+                                                <div style={{ maxWidth: '600px', margin: '0 auto 2rem auto', background: 'var(--color-dark)', border: '4px solid var(--color-light)', padding: 'clamp(1rem, 4vw, 2rem)', boxShadow: '10px 10px 0 rgba(0,0,0,1)' }}>
+                                                    <p style={{ fontFamily: 'var(--font-secondary), sans-serif', fontSize: 'clamp(1rem, 3vw, 1.5rem)', color: 'var(--color-light)', opacity: 0.9 }}>
                                                         {resultData.description}
                                                     </p>
                                                 </div>
-                                                <div style={{ display: 'flex', gap: '2rem', justifyContent: 'center' }}>
-                                                    <StickerButton onClick={resetQuiz} color="var(--color-light)" style={{ fontSize: '1.5rem' }}>RETAKE</StickerButton>
-                                                    <StickerButton onClick={closeQuiz} color="var(--color-hot-pink)" style={{ fontSize: '1.5rem' }}>CLOSE</StickerButton>
+                                                <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+                                                    <StickerButton onClick={resetQuiz} color="var(--color-light)" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.5rem)' }}>RETAKE</StickerButton>
+                                                    <StickerButton onClick={closeQuiz} color="var(--color-hot-pink)" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.5rem)' }}>CLOSE</StickerButton>
                                                 </div>
                                             </motion.div>
                                         )}

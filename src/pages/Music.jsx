@@ -117,16 +117,16 @@ const MusicMerch = () => {
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
-            padding: '0 10vw',
+            padding: '0 clamp(1rem, 5vw, 10vw)',
             background: 'var(--color-dark)'
         }}>
             <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
                 {/* DISCOGRAPHY COLUMN */}
                 <div style={{ flex: '1 1 100%', maxWidth: '800px' }}>
-                    <h2 className="zine-text" style={{ fontSize: '3rem', color: 'var(--color-light)', marginBottom: '2rem', letterSpacing: '2px', textShadow: '2px 2px 0 var(--color-acid-green)', textAlign: 'center' }}>
+                    <h2 className="zine-text" style={{ fontSize: 'clamp(1.8rem, 5vw, 3rem)', color: 'var(--color-light)', marginBottom: '2rem', letterSpacing: '2px', textShadow: '2px 2px 0 var(--color-acid-green)', textAlign: 'center' }}>
                         DISCOGRAPHY
                     </h2>
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem' }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1.5rem' }}>
                         {content.music.map((release) => (
                             <ReleaseItem key={release.id} release={release} />
                         ))}

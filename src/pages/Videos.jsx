@@ -23,7 +23,7 @@ const Videos = () => {
             minHeight: '100vh',
             background: 'var(--color-dark)',
             color: 'var(--color-light)',
-            padding: '8rem 4rem 4rem 4rem',
+            padding: 'clamp(5rem, 8vw, 8rem) clamp(1rem, 4vw, 4rem) 4rem',
             position: 'relative',
             display: 'flex',
             flexDirection: 'column',
@@ -36,8 +36,8 @@ const Videos = () => {
                 viewport={{ once: true }}
                 className="zine-text"
                 style={{
-                    fontSize: '4rem',
-                    marginBottom: '4rem',
+                    fontSize: 'clamp(2rem, 8vw, 4rem)',
+                    marginBottom: '3rem',
                     textTransform: 'uppercase',
                     textAlign: 'center',
                     letterSpacing: '2px',
@@ -49,7 +49,7 @@ const Videos = () => {
 
             <div style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
                 gap: '2rem',
                 width: '100%',
                 maxWidth: '1200px'

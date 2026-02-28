@@ -16,11 +16,11 @@ const SetlistBuilder = () => {
             justifyContent: 'center',
             alignItems: 'center',
             background: 'var(--color-dark)',
-            padding: '0 10vw'
+            padding: '0 clamp(1rem, 5vw, 10vw)'
         }}>
             <div style={{ width: '100%', maxWidth: '600px' }}>
                 <h3 className="zine-text" style={{
-                    fontSize: '4rem',
+                    fontSize: 'clamp(2rem, 8vw, 4rem)',
                     color: 'var(--color-electric-blue)',
                     transform: 'rotate(-2deg)',
                     textShadow: '3px 3px 0 rgba(0,0,0,0.8)',
