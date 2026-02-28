@@ -233,6 +233,8 @@ const Merch = () => {
                                     <img
                                         src={item.image}
                                         alt={item.name}
+                                        loading="lazy"
+                                        decoding="async"
                                         style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'grayscale(100%)' }}
                                         onMouseEnter={(e) => e.target.style.filter = 'grayscale(0%)'}
                                         onMouseLeave={(e) => e.target.style.filter = 'grayscale(100%)'}

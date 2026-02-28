@@ -43,6 +43,8 @@ const HorizontalCarousel = () => {
                         <img
                             src={`${import.meta.env.BASE_URL}assets/carousel/Slice ${img}.jpg`}
                             alt={`Carousel Slice ${img}`}
+                            loading="lazy"
+                            decoding="async"
                             onError={(e) => {
                                 // Ignore missing images locally and just show gray background
                                 e.target.style.display = 'none';
